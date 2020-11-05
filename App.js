@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import { Button, SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Button, SafeAreaView, StyleSheet, Text, TextInput, View, Image } from 'react-native';
 import Todo from './Todo';
 
  const App = () => {
@@ -24,16 +24,30 @@ import Todo from './Todo';
     style={styles.todoImput}
     value={imput} 
     onChangeText={text => setImput(text)} />
-      <Button onPress={addTodo} title='ADD'/>
+      <Button onPress={addTodo} color='pink' title='ADD'/>
+      <Image
+          style={styles.picture}
+          source={{uri: 'https://images.unsplash.com/photo-1545239351-ef35f43d514b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60'}}
+        />
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  but: {
+    backgroundColor: 'red',
+    margin: 20,
+    borderRadius: 50, 
+  },
+  picture: {
+    height: 300,
+    margin: 20,
+    borderRadius: 50, 
+    
+  },
   todoImput:{
     margin: 20,
     height: 40,
-    borderColor: 'red',
     borderWidth: 1,
   },
   container: {
