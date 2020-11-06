@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import { Button, SafeAreaView, StyleSheet, Text, TextInput, View, Image } from 'react-native';
+import { Button, SafeAreaView, StyleSheet, Text, TextInput, View, Image, ScrollView } from 'react-native';
 import Todo from './Todo';
+
 
  const App = () => {
    const [imput, setImput] = useState('');
@@ -13,10 +14,21 @@ import Todo from './Todo';
    }
   return (
     <SafeAreaView>
-    <View>
-      <Text style={styles.container}>Hi, I am Aleksandra and i am building React Native App!</Text>
+    <ScrollView horizontal='true' style={styles.container}>
+      <Image style={styles.stories}
+      source={{uri: 'https://images.unsplash.com/photo-1545239351-ef35f43d514b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60'}}
+      ></Image>
+      <Image style={styles.stories}
+      source={{uri: 'https://images.unsplash.com/photo-1545239351-ef35f43d514b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60'}}
+      ></Image>
+      <Image style={styles.stories}
+      source={{uri: 'https://images.unsplash.com/photo-1545239351-ef35f43d514b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60'}}
+      ></Image>
+      <Image style={styles.stories}
+      source={{uri: 'https://images.unsplash.com/photo-1545239351-ef35f43d514b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60'}}
+      ></Image>
       <StatusBar style="auto" />
-    </View>
+    </ScrollView>
     {todos.map(todo => (
       <Todo title={todo} />
     ))}
@@ -34,6 +46,14 @@ import Todo from './Todo';
 }
 
 const styles = StyleSheet.create({
+  stories: {
+    width: 80,
+    height: 80,
+    borderRadius: 50,
+    margin: 20,
+    borderWidth: 4,
+    borderColor: gradient(yellow, red, purple),
+  },
   but: {
     backgroundColor: 'red',
     margin: 20,
@@ -51,12 +71,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   container: {
-    flex: 1,
-    color: '#fff',
-    fontSize: '30px',
-    backgroundColor: '#585858',
-    alignItems: 'center',
-    justifyContent: 'center',
+   flexDirection: 'row',
+   flexWrap: 'wrap'
+
   },
 });
 
